@@ -62,7 +62,7 @@ digitalWrite(R_RE,LOW);
 digitalWrite(L_RE,LOW); 
 digitalWrite(R_GR,HIGH); 
 digitalWrite(L_GR,HIGH); 
-delay(1000); //왼쪽,오른쪽을 그린으로 유지하면서 업,다운을 준비한다. digitalWrite(U_RE,LOW); digitalWrite(D_RE,LOW);
+delay(8000); //왼쪽,오른쪽을 그린으로 유지하면서 업,다운을 준비한다. digitalWrite(U_RE,LOW); digitalWrite(D_RE,LOW);
 
 for(int i = 0;i<5;i++) 
 { 
@@ -80,7 +80,7 @@ for(int i = 0;i<5;i++)
   digitalWrite(L_GR,LOW);//오른_초록불 HIGH 
   digitalWrite(R_RE,HIGH);//왼 _빨강불 LOW 
   digitalWrite(L_RE,HIGH);//오른 _빨강불 LOW 
-  delay(1000);
+  delay(8000);
 
 digitalWrite(R_RE,LOW);//왼 _초록불 LOW 
 digitalWrite(L_RE,LOW);//오른 _초록불 LOW 
