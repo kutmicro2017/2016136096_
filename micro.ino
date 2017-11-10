@@ -34,7 +34,6 @@ void setup()
   Serial.begin(9600);
   }
   //RED_YEL_GRE
-}
 
 void loop() 
 { 
@@ -62,7 +61,9 @@ digitalWrite(R_RE,LOW);
 digitalWrite(L_RE,LOW); 
 digitalWrite(R_GR,HIGH); 
 digitalWrite(L_GR,HIGH); 
-delay(8000); //왼쪽,오른쪽을 그린으로 유지하면서 업,다운을 준비한다. digitalWrite(U_RE,LOW); digitalWrite(D_RE,LOW);
+delay(8000); //왼쪽,오른쪽을 그린으로 유지하면서 업,다운을 준비한다. 
+  digitalWrite(U_RE,LOW); 
+  digitalWrite(D_RE,LOW);
 
 for(int i = 0;i<5;i++) 
 { 
