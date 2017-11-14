@@ -16,6 +16,8 @@
 //오른쪽; 
 #define START 12
 
+volatile bool state = true;
+void tTof();
 void setup() 
 { 
   pinMode(U_RE,OUTPUT); 
@@ -31,27 +33,20 @@ void setup()
   pinMode(R_YE,OUTPUT); 
   pinMode(R_GR,OUTPUT); 
   pinMode(START,INPUT_PULLUP);//풀업저항 
+  attachInterrupt(0, tTof, FALLING);
   Serial.begin(9600);
   }
   //RED_YEL_GRE
 
 void loop() 
 { 
-  if(digitalRead(START)==LOW)//START부분을 눌르면, IF문을 실행할것이다. 
-  { 
-  digitalWrite(U_YE,HIGH); 
-  digitalWrite(D_YE,HIGH);
-  digitalWrite(L_YE,HIGH); 
-  digitalWrite(R_YE,HIGH); 
-  } 
-  else 
-  { 
+if(state == false) {
   digitalWrite(U_YE,LOW);
   digitalWrite(D_YE,LOW);
-  digitalWrite(L_YE,LOW); 
   digitalWrite(R_YE,LOW);
+  digitalWrite(L_YE,LOW);
+}
 
-} 
 digitalWrite(U_GR,LOW); //위 _초록불 HIGH 
 digitalWrite(D_GR,LOW); //아래_초록불 HIGH 
 digitalWrite(U_RE,HIGH); 
@@ -94,4 +89,4 @@ for(int i=0;i<5;i++)
   digitalWrite(L_YE,LOW);//오른 _노란불 LOW 
   delay(1000); 
   } 
-  }
+}
